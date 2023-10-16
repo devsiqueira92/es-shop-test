@@ -1,0 +1,22 @@
+<nz-table #basicTable [nzData]="colors">
+  <thead>
+    <tr>
+      <th></th>
+      <th *ngFor="let fabric of fabrics">{{ fabric.type }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let color of basicTable.data">
+      <td>{{ color.colorName }}</td>
+
+      <td *ngFor="let fabric of fabrics">
+        <span
+          class="image-fake"
+          *ngFor="let item of getItemsByColorAndFabric(color.id, fabric.id)"
+        >
+        </span>
+        <button (click)="addImage(color.id, fabric.id)">Adicionar</button>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>

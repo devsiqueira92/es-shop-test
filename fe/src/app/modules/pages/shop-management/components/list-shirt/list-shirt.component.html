@@ -1,0 +1,22 @@
+<nz-table #basicTable [nzData]="data">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>N of colors</th>
+      <th>N of fabric</th>
+      <th>N of images</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of basicTable.data">
+      <td>{{ data.name }}</td>
+      <td>{{ data.colorId }}</td>
+      <td>{{ data.fabricId }}</td>
+      <td>{{ data.numberImages }}</td>
+      <td>
+        <a (click)="edit(data.id)">Edit image</a>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>
